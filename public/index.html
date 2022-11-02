@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chatbox</title>
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+		<script src="http://localhost:9999/socket.io/socket.io.js"></script>
+	</head>
+
+	<body>
+		<section id="join-container">
+			<div class="join-container">
+				<div class="header">
+					<h3>Join CatchUp!</h3>
+				</div>
+
+				<div class="name-container">
+					<label for="username">Username</label>
+					<input
+						type="text"
+						name="username"
+						id="username"
+						autocomplete="off"
+						pattern="[a-zA-Z0-9]+"
+						minlength="4"
+						maxlength="10"
+						required
+					/>
+					<button type="submit" id="join-button">JOIN</button>
+				</div>
+			</div>
+		</section>
+
+		<section class="inactive" id="chat-section">
+			<div class="usernames-list">
+				<section class="names" id="names"></section>
+				<section class="username-title">
+					<p class="username-letter">O</p>
+					<p class="username-letter">N</p>
+					<p class="username-letter">L</p>
+					<p class="username-letter">I</p>
+					<p class="username-letter">N</p>
+					<p class="username-letter">E</p>
+				</section>
+			</div>
+
+			<div class="main-container">
+				<div class="header">
+					<div class="online">
+						<h1>CatchUp!</h1>
+						<h3 class="current-user" id="current-user"></h3>
+					</div>
+
+					<button type="submit" id="exit-button">Exit</button>
+				</div>
+
+				<div class="chat-container" id="chat-container"></div>
+
+				<div class="message-container" id="message-container">
+					<p id="status" class="status"></p>
+					<form id="send-container">
+						<input
+							type="text"
+							name="message"
+							id="message-input"
+							autocomplete="off"
+						/>
+
+						<button type="submit" id="send-button">SEND</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script src="./scripts/script.js"></script>
+</html>
